@@ -16,7 +16,7 @@ public class UserController {
 
     @GetMapping("/")
     public String homePage(Model model){
-        model.addAttribute("user", new User(""));
+        model.addAttribute("user", new User());
         return "home";
     }
 
@@ -26,11 +26,5 @@ public class UserController {
 
         return "home";
     }
-    @Controller
-    public class LoginController {
-        @GetMapping("/login")
-        public String login() {
-            return "login";
-        }
-    }
+
 }
