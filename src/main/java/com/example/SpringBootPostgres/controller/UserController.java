@@ -3,6 +3,7 @@ package com.example.SpringBootPostgres.controller;
 import com.example.SpringBootPostgres.entity.User;
 import com.example.SpringBootPostgres.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +14,10 @@ public class UserController {
 
     @Autowired
     private UserRepository repo;
-
+        @GetMapping("/login")
+        public String login() {
+            return "login";
+        }
     @GetMapping("/")
     public String homePage(Model model){
         model.addAttribute("user", new User());
